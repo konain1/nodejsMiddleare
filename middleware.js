@@ -9,8 +9,8 @@
      const username = req.headers.username;
      const password = req.headers.password;
      console.log(username)
-    if(username != 'konain' || password != 'pass'){
-        res.status(403).json({msg:'invalid input'})
+    if(!(username == 'konain' && password == 'pass')){
+        res.status(403).json({msg:'invalid input on password'})
         
     }else{
         next();
@@ -20,7 +20,7 @@
     const kidneyId = req.query.kidneyId
 
     if(kidneyId != 1 && kidneyId != 2){
-    res.status(403).json({"msg":'invalid input'})
+    res.status(403).json({"msg":'invalid input on kidneys'})
 
     }else{
         next()
@@ -32,3 +32,4 @@
     res.json({"msg":'everything is perfect'})
  })
 
+app.listen(3030)

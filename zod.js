@@ -23,7 +23,6 @@ app.get('/',(req,res)=>{
     const response = schema.safeParse(kidneys)
     const emailResponse = email.safeParse(em)
 
-    console.log("hello  world")
 
     if( !emailResponse.success){
         res.status(411).json({msg:'invalid email input'})
@@ -48,4 +47,4 @@ app.use((err,req,res,next)=>{
 })
 
 
- app.listen(3030)
+//  app.listen(3030)
